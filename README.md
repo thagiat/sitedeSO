@@ -1,3 +1,8 @@
+### Estudantes Criadores
+- Roger Yoshiaki Ueda
+- Thais Cardoso da Silva
+- Fabiano Marumo
+
 ## Introdução
 
 ## Journaling FileSystems
@@ -13,3 +18,11 @@ O sistema de arquivos ReiserFS ganhou popularidade pelas suas características, 
 - A organização dos arquivos em uma estrutura de árvore B+, onde os dados são organizados em folhas
 
 ## EXT4
+
+
+## Referências
+
+
+
+
+
