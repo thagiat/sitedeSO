@@ -1,4 +1,4 @@
-### Estudantes Criadores
+## Estudantes Criadores
 - Roger Yoshiaki Ueda
 - Thais Cardoso da Silva
 - Fabiano Marumo
