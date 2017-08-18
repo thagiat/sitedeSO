@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>ext4 e reiserfs</title>
+  <title>Ext4 e ReiserFS</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -43,30 +43,25 @@
         <ul>
           <li><a href="https://github.com/thagiat/sitedeSO">Github</a></li>
         </ul>
-        <h3>Search</h3>
-        <form method="post" action="#" id="search_form">
-          <p>
-            <input class="search" type="text" name="search_field" value="Enter keywords....." />
-            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
-          </p>
-        </form>
+
       </div>
       <div id="content">
         <!-- insert the page content here -->
-        <h1>Introdução</h1>
-        <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>
-        <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS</strong>, and can be validated using the links in the footer.</p>
-        <p>You can view more free HTML5 web templates <a href="http://www.html5webtemplates.co.uk">here</a>.</p>
-        <p>This template is a fully functional 5 page website, with an <a href="examples.html">examples</a> page that gives examples of all the styles available with this design.</p>
-        <h2>Browser Compatibility</h2>
-        <p>This template has been tested in the following browsers:</p>
-        <ul>
-          <li>Internet Explorer 8</li>
-          <li>Internet Explorer 7</li>
-          <li>FireFox 3.5</li>
-          <li>Google Chrome 6</li>
-          <li>Safari 4</li>
-        </ul>
+        <h1>ReiserFS</h1>
+        <h2>Introdução </h2>
+        <p>A primeira implementação do ext(sistema de arquivos estendido) em Linux foi projetado por Remy Card. O ext foi o primeiro sistema de arquivo a utilizar o Sistema de arquivos Virtual(VFS), e suportava até 2GB.</p>
+        <p>Posteriormente foi desenvolvida o segundo sistema de arquivos estendido, o ext2, que também foi desenvolvida por Remy Card. A maior característica dele estava no seu suporte em sistema de arquivos, que aumentou de 2GB até 2TB.</p>
+        <p>O terceiro sistema de arquivos estendido(ext3) promoveu um grande avanço no sistema de arquivos do Linux. Para obter a confiabilidade do sistema de arquivos quando ocorre algum erro ou parada inesperada, foi aplicada o conceito de journaling.</p>
+        <p>Finalmente, está o quarto sistema de arquivos estendido(ext4), que obteve um grande desempenho, escalabilidade e confiabilidade em comparação ao ext3.</p>
+
+        <h2>Característica </h2>
+
+        <p>O ext4 é um sistema de arquivos de 64 bits, e suporta sistemas de arquivos de 1 exabyte para oferecer suporte a volume grande.</p>
+        <p>Uma outra característica importante é a compatibilidade entre as versões futuras e antigas, e o aprimoramentos nos registros de data e hora.</p>
+
+        <h4>Compatibilidade</h4>
+
+        <p>Atualmente, o sistema de arquivos mais utilizada em Linux é o ext3. Para isso, o ext4 foi desenvolvida de tal forma que seja compatível com as versões antigas e futuras. O ext4 é compatível a versão futura pelo fato de que é possível desenvolver um sistema de arquivos ext3 como se fosse o ext4. Também é possível criar um sistema de arquivos ext4 que funcione como ext3, desde que este não possua extensões(sobre a extensão, ver o tópico Extensões).</p>
       </div>
     </div>
     <div id="content_footer"></div>
