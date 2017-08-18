@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>colour_green</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">EXT4 e <span class="logo_colour">ReiserFS</span></a></h1>
+          <h2>Trabalho de Sistema Operacionais.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="index.html">Sobre</a></li>
+          <li><a href="examples.html">Journaling File Systems</a></li>
+          <li><a href="ext4.html">EXT4</a></li>
+          <li><a href="another_page.html">ReiserFS</a></li>
+          <li><a href="contact.html">Benchmark</a></li>
+          <li><a href="contact.html">Referências</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+      <h3>Estudantes Criadores</h3>
+        <ul>
+          <li>Roger Yoshiaki Ueda</li>
+          <li>Thais Cardoso da Silva</li>
+          <li>Fabiano Shiiti Marumo</li>
+        </ul>
+        <h3>Links relativos ao trabalho</h3>
+        <ul>
+          <li><a href="https://github.com/thagiat/sitedeSO">Github</a></li>
+        </ul>
+        <h3>Search</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>EXT4</h1>
+        <h2>Introdução </h2>
+        <p>A primeira implementação do ext(sistema de arquivos estendido) em Linux foi projetado por Remy Card. O ext foi o primeiro sistema de arquivo a utilizar o Sistema de arquivos Virtual(VFS), e suportava até 2GB.</p>
+        <p>Posteriormente foi desenvolvida o segundo sistema de arquivos estendido, o ext2, que também foi desenvolvida por Remy Card. A maior característica dele estava no seu suporte em sistema de arquivos, que aumentou de 2GB até 2TB.</p>
+        <p>O terceiro sistema de arquivos estendido(ext3) promoveu um grande avanço no sistema de arquivos do Linux. Para obter a confiabilidade do sistema de arquivos quando ocorre algum erro ou parada inesperada, foi aplicada o conceito de journaling.</p>
+        <p>Finalmente, está o quarto sistema de arquivos estendido(ext4), que obteve um grande desempenho, escalabilidade e confiabilidade em comparação ao ext3.</p>
+
+        <h2>Característica </h2>
+
+        <p>O ext4 é um sistema de arquivos de 64 bits, e suporta sistemas de arquivos de 1 exabyte para oferecer suporte a volume grande.</p>
+        <p>Uma outra característica importante é a compatibilidade entre as versões futuras e antigas, e o aprimoramentos nos registros de data e hora.</p>
+
+        <h4>Compatibilidade</h4>
+
+        <p>Atualmente, o sistema de arquivos mais utilizada em Linux é o ext3. Para isso, o ext4 foi desenvolvida de tal forma que seja compatível com as versões antigas e futuras. O ext4 é compatível a versão futura pelo fato de que é possível desenvolver um sistema de arquivos ext3 como se fosse o ext4. Também é possível criar um sistema de arquivos ext4 que funcione como ext3, desde que este não possua extensões(sobre a extensão, ver o tópico Extensões).</p>
+        <p>Além desta compatibilidade que o ext4 possui, também possui uma característica que, ao migrar o sistema de arquivos de ext3 para ext4, os arquivos antigos que não foram movidas permanecem como ext3, e os novos arquivos ou os antigos que foram copiadas vão possuir a estrutura de ext4.</p>
+
+        <h4>Aprimoramentos nos registros de data e hora</h4>
+
+        <p>Até o ext3, os registros de data e hora eram baseadas em segundos. Porém, a evolução dos processadores que promovem maior velocidade e integração, e o Linux que está sendo utilizada em computadores de alto desempenho, o registro baseado em segundos pode causar falhas. Para obter uma melhor resolução, em ext4 os registros de data e hora são baseadas em nanossegundos.</p>
+
+
+        <h2>Escalabilidade</h2>
+
+        <p>Em ext4 teve uma grande superação no limite dos volumes do sistema de arquivos, tamanho de arquivos e subdiretórios. O sistema de arquivos suporta até 1 exabyte (1000 petabytes), e o tamanho máximo de cada arquivo em ext4 pode chegar até 16TB (caso cada bloco possui 4KB).</p>
+        <p>Em ext3 o limite para o subdiretório era de 32KB. Em ext4, a capacidade tornou-se virtualmente ilimitados. Para a indexação dos diretórios não utiliza uma árvore B comum; com a implementação da árvore B com Hash, possibilita a realização de uma procura com pouco tempo, mesmo com está limitação grande.</p>
+
+        <h4>Extensões</h4>
+
+        <p>A alocação dos arquivos em ext3 não possuía uma velocidade rápida nem escala grande, pois utilizava um mapa de bits de espaço livre. Em ext4 o mecanismo de alocação dos arquivos foi substituída por extensões (representação de uma sequência adjacente de blocos) para obter a aprimoração na alocação e eficiência no armazenamento. A extensão, ao invés de guardar as informações de cada bloco armazenada, este mantém os dados de cada conjunto de blocos adjacentes, para consequentemente diminuir os armazenamentos de metadados.</p>
+        <p>Para tornar eficiente a representação dos arquivos, a extensão do ext4 faz a abordagem em camadas para os arquivos pequenos, e para arquivos grandes é utilizada a árvore de extensão. Considerando um arquivo pequeno, espaço de um inode do ext4 é suficiente para fazer a referência à quatro extensões. Para um arquivo grande, inode faz a referência à um nó que serve como índice, e cada um deles podem fazer referência à folha, fazendo referência a várias extensões.</p>
+
+        <h2>Desempenho </h2>
+
+        <p>Como foi visto anteriormente, as extensões oferecem segmentos de blocos adjacentes. Uma outra forma de alocação de blocos adjacentes de tamanho desejado é a pré-alocação, uma nova chamada de sistema que o ext4 possui. Ao realizar esta chamada, é realizada a pré-alocação e inicializa um arquivo de um determinado tamanho. Logo depois, é possível gravar as informações necessárias e fornecer o desempenho de leitura sobre os dados.</p>
+
+
+        <h4>Atraso na Alocação dos Blocos</h4>
+
+        <p>A alocação com atraso atrasa o alocamento dos blocos físicos no disco, até que eles sejam sincronizadas no disco. O atraso na alocação dos blocos físicos, até que estes sejam gravados no disco, promove a maior representação dos blocos a serem alocadas e gravadas nos blocos adjacentes.</p>
+
+        <h4>Alocação de Vários Blocos</h4>
+
+
+        <p>Em ext3 para a alocação de blocos era necessário alocar uma de cada vez. Esta forma de alocação dos blocos, quando precisa de vários blocos, aumenta a chance dos dados adjacentes não estarem em blocos adjacentes. Como o ext4 consegue alocar vários blocos por vez, é possível reunir os dados relacionados no disco; consequentemente, obtém uma otimização para a leitura sequencial.</p>
+
+        <p>Para cada alocação de blocos é necessário realizar uma chamada para o alocador de blocos. Em ext3, para cada bloco era realizada a chamada para alocar um bloco por vez. Em ext4 também realiza esta operação para a alocação; porém, alocar vários blocos por vez reduz as chamadas necessárias, resultando em uma alocação mais rápida e em diminuição no processamento.</p>
+
+
+
+        <h2>Confiabilidade</h2>
+
+        <p>O ext4 possui um auto mecanismo para a Autoproteção e Auto Reparo.</p>
+
+
+        <h4>Checksum do Diário do Sistema de Arquivos</h4>
+
+        <p>O ext4, igualmente ao ext3, utiliza o sistema de arquivos journaling. Journaling é um processo que registra as modificações realizadas em sistema de arquivos em journal(diário). A mudança no armazenamento físico no sistema de arquivos ocorre a partir do log registrado no journal, que pode ser implementada com confiabilidade e garantir a consistência, mesmo quando aconteça um erro no sistema ou parada brusca devido a falta de energia.</p>
+        <p>Porém, caso tenha uma entrada no journal que causa algum tipo de erro, há uma possibilidade do sistema de arquivos ser corrompida. Para evitar esta falha, em ext4 foi implementada um checksum no journal para a confirmação da alteração a ser realizada no sistema de arquivos.</p>
+
+        <h4>Desfragmentação Online</h4>
+
+
+        <p>Uma das características importantes do ext4 é a alocação atrasado de blocos. Esta forma de alocação reduz a fragmentação no sistema de arquivos. Porém, é inevitável uma determinada fragmentação que ocorre com o passar do tempo, devido a existência de um sistema de arquivo por muito tempo. Para solucionar este problema, existe uma ferramenta online que faz a desfragmentação do sistema de arquivo e de cada arquivos individuais. Este recurso copia os arquivos em um inode novo do ext4 que faça referência a extensões adjacentes.</p>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright &copy; colour_green | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">Website templates</a>
+    </div>
+  </div>
+</body>
+</html>
