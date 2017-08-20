@@ -48,19 +48,38 @@
         <!-- insert the page content here -->
         <h1>ReiserFS</h1>
         <h2>Introdução </h2>
-        <p>A primeira implementação do ext(sistema de arquivos estendido) em Linux foi projetado por Remy Card. O ext foi o primeiro sistema de arquivo a utilizar o Sistema de arquivos Virtual(VFS), e suportava até 2GB.</p>
-        <p>Posteriormente foi desenvolvida o segundo sistema de arquivos estendido, o ext2, que também foi desenvolvida por Remy Card. A maior característica dele estava no seu suporte em sistema de arquivos, que aumentou de 2GB até 2TB.</p>
-        <p>O terceiro sistema de arquivos estendido(ext3) promoveu um grande avanço no sistema de arquivos do Linux. Para obter a confiabilidade do sistema de arquivos quando ocorre algum erro ou parada inesperada, foi aplicada o conceito de journaling.</p>
-        <p>Finalmente, está o quarto sistema de arquivos estendido(ext4), que obteve um grande desempenho, escalabilidade e confiabilidade em comparação ao ext3.</p>
+        <p>Criado por Hans Reiser em 2001, e gerenciado pela equipe NAMESYS também montada por Reiser. Muito utilizada por estar em muitas distribuições Linux sendo usado junto com ext3.</p>
+        <p>É um sistema de arquivos, ou seja, uma estrutura que organiza como os dados devem ser armazenados em dispositivos de gravação. Com esse recurso é possível determinar o espaço disponível em disco, como um arquivo pode ter suas partes gravadas nas áreas de armazenamento e quais dados podem ser acessados, modificados ou eliminados.</p>
 
-        <h2>Característica </h2>
 
-        <p>O ext4 é um sistema de arquivos de 64 bits, e suporta sistemas de arquivos de 1 exabyte para oferecer suporte a volume grande.</p>
-        <p>Uma outra característica importante é a compatibilidade entre as versões futuras e antigas, e o aprimoramentos nos registros de data e hora.</p>
+        <h2>Características </h2>
 
-        <h4>Compatibilidade</h4>
+        <p>O sistema de arquivos ReiserFS ganhou popularidade pelas suas características, que o tornam um sistema seguro, veloz, confiável e eficiente. Seus principais recursos são: </p>
 
-        <p>Atualmente, o sistema de arquivos mais utilizada em Linux é o ext3. Para isso, o ext4 foi desenvolvida de tal forma que seja compatível com as versões antigas e futuras. O ext4 é compatível a versão futura pelo fato de que é possível desenvolver um sistema de arquivos ext3 como se fosse o ext4. Também é possível criar um sistema de arquivos ext4 que funcione como ext3, desde que este não possua extensões(sobre a extensão, ver o tópico Extensões).</p>
+        <h4>Suporte a arquivos</h4>
+
+        <p>Suporte a arquivos maiores que 2GB, uma limitação existente em outros sistemas de arquivos.</p>
+
+        <h4>Sistema de arquivos com Journaling</h4>
+
+        <p>O Journaling file system é um recurso que em caso de erros de sistema, causados por desligamento abrupto ou falha de hardware, ajuda a manter integridade nos dados. Ele consiste em fazer um registro das ações feitas nos arquivos antes da execução dessas ações, após a execução as operações registradas são tidas como concluídas e são eliminadas.</p>
+
+        <p>Assim, no caso de um desligamento abrupto, o sistema  de arquivos verificará o registro e executará aquilo que estiver marcado como não realizado, essa ação faz com que a perda de dados diminua drasticamente já que o sistema sabe o que não foi concluído.</p>
+        <p>No caso do ReiserFS as técnicas de Journaling estão restritas aos metadados, o que o torna eficiente na recuperação do sistema operacional como um todo em caso de problemas. É possível usar o Journaling nas informações dos arquivos em si em alguns sistema de arquivos, mas o desempenho do sistema de arquivos pode diminuir.</p>
+
+        <h4>Organização em Árvores B+</h4>
+
+        <p>A organização dos arquivos em uma estrutura de árvore B+, onde os dados são organizados em folhas e as folhas são organizadas por nós, ou sub-árvores, que estão ligados a um nó raiz. Para o uso desse processo organizacional é necessário o uso de algoritmos mais complexos, mas a performance na gravação e no acesso aos dados é superior a de outros sistemas de arquivos.</p>
+
+        <h4>Alocação dinâmica de inodes</h4>
+
+        <p>As estruturas que guardam as informações sobre os arquivos, chamadas de inodes, são alocadas dinamicamente com base no tamanho do arquivo, assim, diminuindo o desperdício de espaço, outros sistemas de arquivos tem blocos de tamanho fixo, causando desuso no espaço restante de um bloco.</p>
+
+         <h2>Organização </h2>
+
+        <p>O ReiserFS usa o esquema de Árvores B+ para organizar e localizar os itens que compõem o sistema de arquivos, isso é, os arquivos e as informações associadas a ele como a data de criação e as permissões de acesso.</p>
+        <p>Todos esses itens são classificados em diretórios, blocos de dados(diretos e indiretos) e inodes. Nos inodes são classificados os metadados de cada arquivos. Os blocos de dados diretos são os arquivos quando armazenados nas folhas das sub-árvores, e são compostos por blocos de dados pequenos, independente do tamanho do arquivo ser variável. Os blocos de dados indiretos não são incluídos nas árvores e são localizáveis por ponteiros que indicam onde foram armazenados.</p>
+        <p>Esses recursos fazem que o espaço em disco seja melhor aproveitado, porém, pode causar maior fragmentação de dados e assim exigir mais recursos para processamento.</p>
       </div>
     </div>
     <div id="content_footer"></div>
