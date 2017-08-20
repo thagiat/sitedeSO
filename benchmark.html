@@ -47,457 +47,462 @@
       <div id="content">
         <h1>Benchmark</h1>
         
-<p> </p>
-<p>Ambiente para a realização do benchmark:</p>
-<ul>
-  <li>HP DL360 G4 <br /> Xeon 3.0GHz 1MB L2 <br /> 1GB Memory , PC2700 <br /> 36GB 15K HDD * 1 , Ultra 320 SCSI （Modelo：BF03688284）</li>
-  <li>Ubuntu 9.10 Alpha 2 （2.6.30-8-generic #9-Ubuntu SMP）</li>
-  <li>bonnie++ 1.03c</li>
-</ul>
-<p> </p>
-<p>Acesso sequencial</p>
-<p> </p>
-<p>Acesso aleatório</p>
-<p> </p>
-<p>Operação de metadados 1(Criação/Exclusão de arquivo)</p>
-<p>Operação de metadados 2 (Obtenção de dados sobre arquivo)</p>
-<p> </p>
-<p> </p>
-<table>
-  <thead>
-    <tr>
-      <td rowspan="3" width="90">
-        <p>FileSystem</p>
-      </td>
-      <td rowspan="3" width="90">
-        <p>mount <br /> options</p>
-      </td>
-      <td colspan="3" width="180">
-        <p>Sequential Output</p>
-      </td>
-      <td colspan="2" width="120">
-        <p>Sequential Input</p>
-      </td>
-      <td rowspan="2" width="60">
-        <p>Random <br /> Seeks</p>
-      </td>
-    </tr>
-    <tr>
-      <td width="60">
-        <p>Per Chr</p>
-      </td>
-      <td width="60">
-        <p>Block</p>
-      </td>
-      <td width="60">
-        <p>Rewrite</p>
-      </td>
-      <td width="60">
-        <p>Per Chr</p>
-      </td>
-      <td width="60">
-        <p>Block</p>
-      </td>
-    </tr>
-    <tr>
-      <td width="60">
-        <p>K/sec</p>
-      </td>
-      <td width="60">
-        <p>K/sec</p>
-      </td>
-      <td width="60">
-        <p>K/sec</p>
-      </td>
-      <td width="60">
-        <p>K/sec</p>
-      </td>
-      <td width="60">
-        <p>K/sec</p>
-      </td>
-      <td width="60">
-        <p>/sec</p>
-      </td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <p>ext3</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>38,571</p>
-      </td>
-      <td>
-        <p>64,081</p>
-      </td>
-      <td>
-        <p>20,062</p>
-      </td>
-      <td>
-        <p>41,243</p>
-      </td>
-      <td>
-        <p>61,193</p>
-      </td>
-      <td>
-        <p>577</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ext4</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>39,859</p>
-      </td>
-      <td>
-        <p>92,982</p>
-      </td>
-      <td>
-        <p>25,588</p>
-      </td>
-      <td>
-        <p>43,110</p>
-      </td>
-      <td>
-        <p>85,421</p>
-      </td>
-      <td>
-        <p>544</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>JFS</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>11,055</p>
-      </td>
-      <td>
-        <p>11,302</p>
-      </td>
-      <td>
-        <p>24,251</p>
-      </td>
-      <td>
-        <p>42,271</p>
-      </td>
-      <td>
-        <p>83,750</p>
-      </td>
-      <td>
-        <p>568</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ReiserFS</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>37,250</p>
-      </td>
-      <td>
-        <p>90,743</p>
-      </td>
-      <td>
-        <p>23,761</p>
-      </td>
-      <td>
-        <p>42,009</p>
-      </td>
-      <td>
-        <p>81,217</p>
-      </td>
-      <td>
-        <p>687</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>XFS</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>41,115</p>
-      </td>
-      <td>
-        <p>94,241</p>
-      </td>
-      <td>
-        <p>25,414</p>
-      </td>
-      <td>
-        <p>43,125</p>
-      </td>
-      <td>
-        <p>85,770</p>
-      </td>
-      <td>
-        <p>550</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>NILFS2</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>22,712</p>
-      </td>
-      <td>
-        <p>41,980</p>
-      </td>
-      <td>
-        <p>23,221</p>
-      </td>
-      <td>
-        <p>41,321</p>
-      </td>
-      <td>
-        <p>48,709</p>
-      </td>
-      <td>
-        <p>568</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-<table>
-  <thead>
-    <tr>
-      <td rowspan="3" width="90">
-        <p>FileSystem</p>
-      </td>
-      <td rowspan="3" width="90">
-        <p>mount <br /> options</p>
-      </td>
-      <td colspan="3" width="180">
-        <p>Sequential Create</p>
-      </td>
-      <td colspan="3" width="180">
-        <p>Random Create</p>
-      </td>
-    </tr>
-    <tr>
-      <td width="60">
-        <p>Create</p>
-      </td>
-      <td width="60">
-        <p>Read</p>
-      </td>
-      <td width="60">
-        <p>Delete</p>
-      </td>
-      <td width="60">
-        <p>Create</p>
-      </td>
-      <td width="60">
-        <p>Read</p>
-      </td>
-      <td width="60">
-        <p>Delete</p>
-      </td>
-    </tr>
-    <tr>
-      <td width="60">
-        <p>/sec</p>
-      </td>
-      <td width="60">
-        <p>/sec</p>
-      </td>
-      <td width="60">
-        <p>/sec</p>
-      </td>
-      <td width="60">
-        <p>/sec</p>
-      </td>
-      <td width="60">
-        <p>/sec</p>
-      </td>
-      <td width="60">
-        <p>/sec</p>
-      </td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <p>ext3</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>37,739</p>
-      </td>
-      <td>
-        <p>333,335</p>
-      </td>
-      <td>
-        <p>45,945</p>
-      </td>
-      <td>
-        <p>29,480</p>
-      </td>
-      <td>
-        <p>387,409</p>
-      </td>
-      <td>
-        <p>2,178</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ext4</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>31,738</p>
-      </td>
-      <td>
-        <p>318,831</p>
-      </td>
-      <td>
-        <p>42,644</p>
-      </td>
-      <td>
-        <p>25,717</p>
-      </td>
-      <td>
-        <p>372,225</p>
-      </td>
-      <td>
-        <p>2,719</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>JFS</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>1,370</p>
-      </td>
-      <td>
-        <p>421,483</p>
-      </td>
-      <td>
-        <p>440</p>
-      </td>
-      <td>
-        <p>474</p>
-      </td>
-      <td>
-        <p>393,470</p>
-      </td>
-      <td>
-        <p>193</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ReiserFS</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>26,681</p>
-      </td>
-      <td>
-        <p>381,081</p>
-      </td>
-      <td>
-        <p>25,580</p>
-      </td>
-      <td>
-        <p>26,158</p>
-      </td>
-      <td>
-        <p>391,793</p>
-      </td>
-      <td>
-        <p>1,706</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>XFS</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>2,864</p>
-      </td>
-      <td>
-        <p>468,044</p>
-      </td>
-      <td>
-        <p>6,389</p>
-      </td>
-      <td>
-        <p>2,835</p>
-      </td>
-      <td>
-        <p>376,904</p>
-      </td>
-      <td>
-        <p>613</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>NILFS2</p>
-      </td>
-      <td>
-        <p>-</p>
-      </td>
-      <td>
-        <p>3,766</p>
-      </td>
-      <td>
-        <p>488,764</p>
-      </td>
-      <td>
-        <p>95,012</p>
-      </td>
-      <td>
-        <p>3,992</p>
-      </td>
-      <td>
-        <p>394,540</p>
-      </td>
-      <td>
-        <p>5,375</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p> </p>
-<p>Análise dos resultados</p>
+    <p> </p>
+    <h4>Ambiente para a realização do benchmark:</h4>
+    <ul>
+      <li>HP DL360 G4 <br /> Xeon 3.0GHz 1MB L2 <br /> 1GB Memory , PC2700 <br /> 36GB 15K HDD * 1 , Ultra 320 SCSI （Modelo：BF03688284）</li>
+      <li>Ubuntu 9.10 Alpha 2 （2.6.30-8-generic #9-Ubuntu SMP）</li>
+      <li>bonnie++ 1.03c</li>
+    </ul>
+    <p> </p>
+    <h4>Acesso sequencial</h4>
+     <img src="style/b1.png" alt="benchmark 1">
+     <p></p>
+    <h4>Acesso aleatório</h4>
+      <img src="style/b2.png" alt="benchmark 2">
+      <p></p>
+    <h4>Operação de metadados 1(Criação/Exclusão de arquivo)</h4>
+     <img src="style/b3.png" alt="benchmark 3">
+     <p></p>
+    <h4>Operação de metadados 2 (Obtenção de dados sobre arquivo)</h4>
+      <img src="style/b4.png" alt="benchmark 4">
+    <p></p>
+    <p>Tabela de Sequencial input e output</p>
+    <table>
+      <thead>
+        <tr>
+          <td rowspan="3" width="90">
+            <p>FileSystem</p>
+          </td>
+          <td rowspan="3" width="90">
+            <p>mount <br /> options</p>
+          </td>
+          <td colspan="3" width="180">
+            <p>Sequential Output</p>
+          </td>
+          <td colspan="2" width="120">
+            <p>Sequential Input</p>
+          </td>
+          <td rowspan="2" width="60">
+            <p>Random <br /> Seeks</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="60">
+            <p>Per Chr</p>
+          </td>
+          <td width="60">
+            <p>Block</p>
+          </td>
+          <td width="60">
+            <p>Rewrite</p>
+          </td>
+          <td width="60">
+            <p>Per Chr</p>
+          </td>
+          <td width="60">
+            <p>Block</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="60">
+            <p>K/sec</p>
+          </td>
+          <td width="60">
+            <p>K/sec</p>
+          </td>
+          <td width="60">
+            <p>K/sec</p>
+          </td>
+          <td width="60">
+            <p>K/sec</p>
+          </td>
+          <td width="60">
+            <p>K/sec</p>
+          </td>
+          <td width="60">
+            <p>/sec</p>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>ext3</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>38,571</p>
+          </td>
+          <td>
+            <p>64,081</p>
+          </td>
+          <td>
+            <p>20,062</p>
+          </td>
+          <td>
+            <p>41,243</p>
+          </td>
+          <td>
+            <p>61,193</p>
+          </td>
+          <td>
+            <p>577</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>ext4</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>39,859</p>
+          </td>
+          <td>
+            <p>92,982</p>
+          </td>
+          <td>
+            <p>25,588</p>
+          </td>
+          <td>
+            <p>43,110</p>
+          </td>
+          <td>
+            <p>85,421</p>
+          </td>
+          <td>
+            <p>544</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>JFS</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>11,055</p>
+          </td>
+          <td>
+            <p>11,302</p>
+          </td>
+          <td>
+            <p>24,251</p>
+          </td>
+          <td>
+            <p>42,271</p>
+          </td>
+          <td>
+            <p>83,750</p>
+          </td>
+          <td>
+            <p>568</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>ReiserFS</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>37,250</p>
+          </td>
+          <td>
+            <p>90,743</p>
+          </td>
+          <td>
+            <p>23,761</p>
+          </td>
+          <td>
+            <p>42,009</p>
+          </td>
+          <td>
+            <p>81,217</p>
+          </td>
+          <td>
+            <p>687</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>XFS</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>41,115</p>
+          </td>
+          <td>
+            <p>94,241</p>
+          </td>
+          <td>
+            <p>25,414</p>
+          </td>
+          <td>
+            <p>43,125</p>
+          </td>
+          <td>
+            <p>85,770</p>
+          </td>
+          <td>
+            <p>550</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>NILFS2</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>22,712</p>
+          </td>
+          <td>
+            <p>41,980</p>
+          </td>
+          <td>
+            <p>23,221</p>
+          </td>
+          <td>
+            <p>41,321</p>
+          </td>
+          <td>
+            <p>48,709</p>
+          </td>
+          <td>
+            <p>568</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>    Tabela de Sequencial create e Random create</p>
+    <table>
+      <thead>
+        <tr>
+          <td rowspan="3" width="90">
+            <p>FileSystem</p>
+          </td>
+          <td rowspan="3" width="90">
+            <p>mount <br /> options</p>
+          </td>
+          <td colspan="3" width="180">
+            <p>Sequential Create</p>
+          </td>
+          <td colspan="3" width="180">
+            <p>Random Create</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="60">
+            <p>Create</p>
+          </td>
+          <td width="60">
+            <p>Read</p>
+          </td>
+          <td width="60">
+            <p>Delete</p>
+          </td>
+          <td width="60">
+            <p>Create</p>
+          </td>
+          <td width="60">
+            <p>Read</p>
+          </td>
+          <td width="60">
+            <p>Delete</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="60">
+            <p>/sec</p>
+          </td>
+          <td width="60">
+            <p>/sec</p>
+          </td>
+          <td width="60">
+            <p>/sec</p>
+          </td>
+          <td width="60">
+            <p>/sec</p>
+          </td>
+          <td width="60">
+            <p>/sec</p>
+          </td>
+          <td width="60">
+            <p>/sec</p>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>ext3</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>37,739</p>
+          </td>
+          <td>
+            <p>333,335</p>
+          </td>
+          <td>
+            <p>45,945</p>
+          </td>
+          <td>
+            <p>29,480</p>
+          </td>
+          <td>
+            <p>387,409</p>
+          </td>
+          <td>
+            <p>2,178</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>ext4</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>31,738</p>
+          </td>
+          <td>
+            <p>318,831</p>
+          </td>
+          <td>
+            <p>42,644</p>
+          </td>
+          <td>
+            <p>25,717</p>
+          </td>
+          <td>
+            <p>372,225</p>
+          </td>
+          <td>
+            <p>2,719</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>JFS</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>1,370</p>
+          </td>
+          <td>
+            <p>421,483</p>
+          </td>
+          <td>
+            <p>440</p>
+          </td>
+          <td>
+            <p>474</p>
+          </td>
+          <td>
+            <p>393,470</p>
+          </td>
+          <td>
+            <p>193</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>ReiserFS</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>26,681</p>
+          </td>
+          <td>
+            <p>381,081</p>
+          </td>
+          <td>
+            <p>25,580</p>
+          </td>
+          <td>
+            <p>26,158</p>
+          </td>
+          <td>
+            <p>391,793</p>
+          </td>
+          <td>
+            <p>1,706</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>XFS</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>2,864</p>
+          </td>
+          <td>
+            <p>468,044</p>
+          </td>
+          <td>
+            <p>6,389</p>
+          </td>
+          <td>
+            <p>2,835</p>
+          </td>
+          <td>
+            <p>376,904</p>
+          </td>
+          <td>
+            <p>613</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>NILFS2</p>
+          </td>
+          <td>
+            <p>-</p>
+          </td>
+          <td>
+            <p>3,766</p>
+          </td>
+          <td>
+            <p>488,764</p>
+          </td>
+          <td>
+            <p>95,012</p>
+          </td>
+          <td>
+            <p>3,992</p>
+          </td>
+          <td>
+            <p>394,540</p>
+          </td>
+          <td>
+            <p>5,375</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+<h4>Análise dos resultados</h4>
 <ul>
   <li>A partir do resultado é possível observar que para o acesso sequencial os sistemas de arquivos ext4、XFS e ReiserFS possuem melhor desempenho.</li>
   <li>Para acesso aleatório ou operação de metadados, ext3, ext4 e ReiserFS tiveram um balanceamento, resultando na conclusão de que estes sistemas de arquivos possuem um bom desempenho em geral.</li>
